@@ -10,7 +10,7 @@ ASSETS USED:
 8. https://assetstore.unity.com/packages/3d/props/interior/lamp-model-110960
 9. https://assetstore.unity.com/packages/2d/textures-materials/wood/wooden-floor-materials-150564
 10. https://assetstore.unity.com/packages/3d/props/clothing/bed-pbr-227070
-11. 
-12. 
-13. 
+11. https://assetstore.unity.com/packages/3d/props/basic-bedroom-starterpack-215986
+12. https://assetstore.unity.com/packages/3d/props/interior/picture-frames-with-photos-106907
+13. https://assetstore.unity.com/packages/3d/props/tim-s-assets-old-ceiling-fan-103789
 14. 
