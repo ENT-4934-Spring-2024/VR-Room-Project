@@ -1,0 +1,10 @@
+
+sofa: https://assetstore.unity.com/packages/3d/props/furniture/patio-sofa-set-227952
+closet:https://assetstore.unity.com/packages/3d/environments/minimalist-archviz-bedroom-131093
+paintings: https://assetstore.unity.com/packages/3d/props/interior/paintings-free-44185
+large sofa: https://assetstore.unity.com/packages/3d/props/furniture/furniture-set-free-242389
+Sofa sethttps://assetstore.unity.com/packages/3d/props/furniture/patio-sofa-set-227952
+Mirror : https://assetstore.unity.com/packages/3d/props/basic-bedroom-starterpack-215986
+bed :https://assetstore.unity.com/packages/3d/props/furniture/bed-collection-25256
+floor textures :https://assetstore.unity.com/packages/2d/textures-materials/wood/yughues-free-wooden-floor-materials-13213
+potted plant: https://assetstore.unity.com/packages/3d/vegetation/plants/potted-plant-249570
