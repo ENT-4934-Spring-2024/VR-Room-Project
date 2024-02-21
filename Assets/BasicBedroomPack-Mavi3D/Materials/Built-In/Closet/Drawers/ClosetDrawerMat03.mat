@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: ClosetDrawerMat03
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_Parent: {fileID: 2100000, guid: 52930cafbcd01ea4885ee0214fed87fc, type: 2}
+  m_Parent: {fileID: 2100000, guid: 9bb2992e6a1d88f4699ce1880343bc81, type: 2}
   m_ModifiedSerializedProperties: 16
   m_ValidKeywords:
   - _OCCLUSIONMAP
@@ -63,5 +63,5 @@ Material:
     - _GlossMapScale: 1
     - _Smoothness: 0.5
     m_Colors:
-    - _Color: {r: 0.8018868, g: 0.34671307, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

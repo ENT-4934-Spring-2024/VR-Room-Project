@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: ClosetDrawerMat02
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_Parent: {fileID: 2100000, guid: f6f6a407814417a43860268b1e5affae, type: 2}
+  m_Parent: {fileID: 2100000, guid: dc37755b30ec8d24ea0e1af4e6c71a92, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _OCCLUSIONMAP
