@@ -1,0 +1,34 @@
+{
+    "name": "TsetControls",
+    "maps": [
+        {
+            "name": "Keyboard",
+            "id": "69edea19-314c-48f4-bd7a-211168b647f8",
+            "actions": [
+                {
+                    "name": "Respawn",
+                    "type": "Button",
+                    "id": "50eb4f28-dd98-4b3d-a89d-1e7c011c9329",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ec40396d-fe03-4d16-b5f2-5c4b4931d572",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Respawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
