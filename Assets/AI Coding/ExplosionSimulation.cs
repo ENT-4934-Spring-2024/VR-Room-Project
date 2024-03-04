@@ -5,10 +5,12 @@ public class ExplosionSimulation : MonoBehaviour
 {
     public Shader explosionShader; // Shader for explosion particles
     public int numberOfParticles = 100; // Number of particles to emit
-    public float explosionForce = 10f; // Force of the explosion
+    public float explosionForce = 10f; // Force of the explosion applied to particles
+    public float rigidbodyExplosionForce = 20f; // Force of the explosion applied to nearby rigidbodies
     public float explosionRadius = 5f; // Radius of the explosion
     public bool removeObjectOnExplosion = false; // Remove the object when exploded
     public ScaleDecrease particleScaleScript; // Reference to the ScaleDecrease script
+    public float falloffFactor = 1f; // Factor controlling the falloff of explosion force
 
     // Countdown Mode Settings
     public bool countdownMode = true; // Toggle between countdown mode and instant mode
@@ -68,21 +70,13 @@ public class ExplosionSimulation : MonoBehaviour
             // Emit particles
             EmitParticles();
 
+            // Apply explosion force to nearby rigidbodies
+            ApplyRigidbodyExplosionForce();
+
             // Remove the object if enabled
             if (removeObjectOnExplosion)
             {
                 Destroy(gameObject);
-            }
-
-            // Apply explosion force to nearby rigidbodies
-            Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
-            foreach (Collider collider in colliders)
-            {
-                Rigidbody rb = collider.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
-                }
             }
 
             hasExploded = true;
@@ -110,13 +104,41 @@ public class ExplosionSimulation : MonoBehaviour
             }
 
             // Add ScaleDecrease script to the particle
-            ScaleDecrease scaleDecreaseScript = particle.AddComponent<ScaleDecrease>();
-            if (scaleDecreaseScript != null)
+            if (particleScaleScript != null)
             {
-                scaleDecreaseScript.StartScaleDecrease();
-                scaleDecreaseScript.minScale = 0.1f; // Example: Specify minimum scale
-                scaleDecreaseScript.destroyOnMinScale = true; // Example: Destroy particle on reaching minimum scale
+                ScaleDecrease scaleDecreaseScript = particle.AddComponent<ScaleDecrease>();
+                if (scaleDecreaseScript != null)
+                {
+                    scaleDecreaseScript.StartScaleDecrease();
+                    scaleDecreaseScript.minScale = 0.1f; // Example: Specify minimum scale
+                    scaleDecreaseScript.destroyOnMinScale = true; // Example: Destroy particle on reaching minimum scale
+                }
             }
         }
     }
+
+    private void ApplyRigidbodyExplosionForce()
+    {
+        // Apply explosion force to nearby rigidbodies
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach (Collider collider in colliders)
+        {
+            Rigidbody rb = collider.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                // Calculate distance to the explosion point with a small random offset
+                Vector3 explosionPointWithOffset = transform.position + Random.onUnitSphere * 0.01f;
+                float distanceToExplosion = Vector3.Distance(rb.position, explosionPointWithOffset);
+
+                Debug.Log("Distance to explosion: " + distanceToExplosion); // Debug statement
+
+                // Calculate adjusted explosion force based on distance and falloff factor
+                float adjustedForce = rigidbodyExplosionForce / (distanceToExplosion * distanceToExplosion) * falloffFactor;
+
+                // Apply explosion force to the rigidbody
+                rb.AddExplosionForce(adjustedForce, transform.position, explosionRadius);
+            }
+        }
+    }
+
 }
