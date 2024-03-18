@@ -6,7 +6,6 @@ public class ExplosionSimulation : MonoBehaviour
     public Shader explosionShader; // Shader for explosion particles
     public int numberOfParticles = 100; // Number of particles to emit
     public float explosionForce = 10f; // Force of the explosion applied to particles
-    public float rigidbodyExplosionForce = 20f; // Force of the explosion applied to nearby rigidbodies
     public float explosionRadius = 5f; // Radius of the explosion
     public bool removeObjectOnExplosion = false; // Remove the object when exploded
     public ScaleDecrease particleScaleScript; // Reference to the ScaleDecrease script
@@ -22,6 +21,8 @@ public class ExplosionSimulation : MonoBehaviour
     private bool hasExploded = false;
     private List<GameObject> particles = new List<GameObject>(); // List to store the emitted particles
     private float countdownTimer; // Countdown timer variable
+
+    public ForceFalloff forceFalloffScript; // Reference to the ForceFalloff script
 
     private void Start()
     {
@@ -70,9 +71,6 @@ public class ExplosionSimulation : MonoBehaviour
             // Emit particles
             EmitParticles();
 
-            // Apply explosion force to nearby rigidbodies
-            ApplyRigidbodyExplosionForce();
-
             // Remove the object if enabled
             if (removeObjectOnExplosion)
             {
@@ -116,29 +114,4 @@ public class ExplosionSimulation : MonoBehaviour
             }
         }
     }
-
-    private void ApplyRigidbodyExplosionForce()
-    {
-        // Apply explosion force to nearby rigidbodies
-        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
-        foreach (Collider collider in colliders)
-        {
-            Rigidbody rb = collider.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                // Calculate distance to the explosion point with a small random offset
-                Vector3 explosionPointWithOffset = transform.position + Random.onUnitSphere * 0.01f;
-                float distanceToExplosion = Vector3.Distance(rb.position, explosionPointWithOffset);
-
-                Debug.Log("Distance to explosion: " + distanceToExplosion); // Debug statement
-
-                // Calculate adjusted explosion force based on distance and falloff factor
-                float adjustedForce = rigidbodyExplosionForce / (distanceToExplosion * distanceToExplosion) * falloffFactor;
-
-                // Apply explosion force to the rigidbody
-                rb.AddExplosionForce(adjustedForce, transform.position, explosionRadius);
-            }
-        }
-    }
-
 }
