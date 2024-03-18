@@ -1,0 +1,174 @@
+{
+    "name": "test",
+    "maps": [
+        {
+            "name": "Movement",
+            "id": "db185909-52c4-4d4f-af11-9cf9a45c1899",
+            "actions": [
+                {
+                    "name": "Pitch",
+                    "type": "Button",
+                    "id": "58a45694-783d-44d7-98fa-bd0662e440f3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Roll",
+                    "type": "Button",
+                    "id": "9a4695b6-1463-4232-adae-28fe2838646d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "d6a240e6-3639-47a1-9ec6-8e8d6d822103",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "9638984a-390a-4b7f-9450-4b285060e938",
+                    "path": "1DAxis(minValue=-100,maxValue=100)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "54e00c71-8850-417f-bdc4-bfdf322447e8",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "c097d795-b204-4295-92e5-a24fd26229a7",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "ebc46883-8972-4610-a2ad-5216eda5b511",
+                    "path": "1DAxis(minValue=-100,maxValue=100)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "131c58da-90e6-463c-af3c-b08218aac43b",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "30986443-c71d-40af-8b8f-2d1dfcbf52a4",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pitch",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "428d683c-7440-4b4c-8c6f-588a67a65f68",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "New action map",
+            "id": "f843fffc-16b7-4d66-a009-f4c4a634fa63",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "0197cc41-f862-4b14-8e8e-cdac29a2b1cf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c915ba68-9117-4496-b952-0e06b8975233",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "superplane",
+            "id": "3c2a4085-73ca-4946-ab6c-0be1ae4d11d5",
+            "actions": [
+                {
+                    "name": "glide",
+                    "type": "Button",
+                    "id": "29d25d90-eb79-4da1-b574-db22dc0d8fbb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4c3d565d-dced-4cc9-8921-2786820433df",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "glide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
