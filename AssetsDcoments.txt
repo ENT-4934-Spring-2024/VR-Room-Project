@@ -1,4 +1,4 @@
-
+Assets
 sofa: https://assetstore.unity.com/packages/3d/props/furniture/patio-sofa-set-227952
 closet:https://assetstore.unity.com/packages/3d/environments/minimalist-archviz-bedroom-131093
 paintings: https://assetstore.unity.com/packages/3d/props/interior/paintings-free-44185
